@@ -1,4 +1,4 @@
-<div class="app-sidebar sidebar-shadow bg-asteroid sidebar-text-light">
+<div class="app-sidebar sidebar-shadow bg-premium-dark sidebar-text-light">
     <div class="app-header__logo">
         <div class="logo-src"></div>
         <div class="header__pane ml-auto">
@@ -42,6 +42,24 @@
                 <li class="app-sidebar__heading">Products & Categories</li>
                 <li>
                     <a href="{{route('admin.categories.index')}}" class="sidebar-item">
+                        <i class="metismenu-icon pe-7s-menu"></i>
+                         Categories
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('admin.academic-cates.index')}}" class="sidebar-item">
+                        <i class="metismenu-icon pe-7s-menu"></i>
+                        Academic Categories
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar-item">
+                        <i class="metismenu-icon pe-7s-menu"></i>
+                        Categories
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar-item">
                         <i class="metismenu-icon pe-7s-menu"></i>
                         Categories
                     </a>
