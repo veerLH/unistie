@@ -39,13 +39,13 @@
                         Home
                     </a>
                 </li>
-                <li class="app-sidebar__heading">Products & Categories</li>
-                <li>
+                <li class="app-sidebar__heading">Categories</li>
+                {{-- <li>
                     <a href="{{route('admin.categories.index')}}" class="sidebar-item">
                         <i class="metismenu-icon pe-7s-menu"></i>
                          Categories
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="{{route('admin.academic-cates.index')}}" class="sidebar-item">
                         <i class="metismenu-icon pe-7s-menu"></i>
@@ -53,9 +53,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="sidebar-item">
+                    <a href="{{route('admin.dept-cates.index')}}" class="sidebar-item">
                         <i class="metismenu-icon pe-7s-menu"></i>
-                        Categories
+                        Department Categories
                     </a>
                 </li>
                 <li>

@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Yajra\DataTables\DataTables;
-use App\Http\Requests\{StoreAcademic};
+use App\Http\Requests\{DeptRequest};
 use App\Helper\ResponseHelper;
-use App\Models\{AcCategory};
+use App\Models\{DepartCate};
 
-class AcademicCateController extends Controller
+
+class DeptCateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,15 +21,15 @@ class AcademicCateController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()) {
-            $AcCategories = AcCategory::anyTrash($request->trash)->get();
-            return DataTables::of($AcCategories)
+            $DepartCates = DepartCate::anyTrash($request->trash)->get();
+            return DataTables::of($DepartCates)
                         ->addColumn('plus-icon', function() {
                             return null;
                         })
                         ->addColumn('action', function ($category) use ($request) {
                             $detail_btn = '';
                             $restore_btn = '';
-                            $edit_btn = '<a class="edit text text-primary mr-2" href="' . route('admin.academic-cates.edit', ['academic_cate' => $category->id]) . '"><i class="far fa-edit fa-lg"></i></a>';
+                            $edit_btn = '<a class="edit text text-primary mr-2" href="' . route('admin.dept-cates.edit', ['dept_cate' => $category->id]) . '"><i class="far fa-edit fa-lg"></i></a>';
 
                             if ($request->trash == 1) {
                                 $restore_btn = '<a class="restore text text-warning mr-2" href="#" data-id="' . $category->id . '"><i class="fa fa-trash-restore fa-lg"></i></a>';
@@ -42,7 +43,7 @@ class AcademicCateController extends Controller
                         ->rawColumns(['plus-icon','action'])
                         ->make(true);
         }
-        return view('backend.admin.academic_cate.index');
+        return view('backend.admin.depar_cate.index');
     }
 
     /**
@@ -52,9 +53,7 @@ class AcademicCateController extends Controller
      */
     public function create()
     {
-        $active_categories = AcCategory::noTrash();
-        $suggest_rank = $active_categories->max('rank') + 1;
-        return view('backend.admin.academic_cate.create', compact('suggest_rank'));
+        //
     }
 
     /**
@@ -63,17 +62,9 @@ class AcademicCateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAcademic $request)
+    public function store(Request $request)
     {
-        $check_slug = AcCategory::where('slug', $request->name)->first();
-        if($check_slug) {
-            return back()->withErrors(['msg' => 'Link is already exist.'])->withInput();
-        }
-        $slug = Str::slug($request->name);
-        $request['slug'] = $slug;
-        AcCategory::create($request->all());
-
-        return redirect()->route('admin.academic_cates.index')->with('success', 'New academic_cate Successfully Created.');
+        //
     }
 
     /**
@@ -93,10 +84,9 @@ class AcademicCateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(AcCategory $academic_cate)
+    public function edit($id)
     {
         //
-        return view('backend.admin.academic_cate.edit',compact('academic_cate'));
     }
 
     /**
@@ -106,17 +96,9 @@ class AcademicCateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreAcademic $request, AcCategory $academic_cate)
+    public function update(Request $request, $id)
     {
-        $check_slug = AcCategory::where('slug', $request->name)->first();
-        if($check_slug) {
-            return back()->withErrors(['msg' => 'Link is already exist.'])->withInput();
-        }
-        $slug = Str::slug($request->name);
-        $request['slug'] = $slug;
-        $academic_cate->update($request->all());
-
-        return redirect()->route('admin.academic-cates.index')->with('success', 'New academic_cate Successfully Updated.');
+        //
     }
 
     /**

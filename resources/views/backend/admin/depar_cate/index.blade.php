@@ -14,7 +14,7 @@
     </div>
 
     {{-- @can('add_admin_user') --}}
-    <a href="{{route('admin.academic-cates.create')}}" title="Add Admin User" class="btn btn-primary action-btn">Add Academic Category</a>
+    <a href="{{route('admin.dept-cates.create')}}" title="Add Admin User" class="btn btn-primary action-btn">Add Department</a>
     {{-- @endcan --}}
 </div>
 @endsection
@@ -31,7 +31,6 @@
                             <tr>
                                 <th></th>
                                 <th>Name</th>
-                                <th>Rank</th>
                                 <th class="no-sort action">Action</th>
                                 <th class="d-none hidden">Updated at</th>
                             </tr>
@@ -48,7 +47,7 @@
 
 @section('script')
 <script>
-var route_model_name = "academic-cates";
+var route_model_name = "dept-cates";
 var app_table;
 $(function() {
     app_table = $('.data-table').DataTable({
@@ -58,12 +57,11 @@ $(function() {
         columns: [
             {data: "plus-icon", name: "plus-icon", defaultContent: null},
             {data: 'name', name: 'name', defaultContent: "-", class: ""},
-            {data: 'rank', name: 'rank', defaultContent: "-", class: ""},
             {data: 'action', name: 'action', orderable: false, searchable: false},
             {data: 'updated_at', name: 'updated_at', defaultContent: null}
         ],
         order: [
-            [4, 'desc']
+            [3, 'desc']
         ],
         responsive: {
             details: {type: "column", target: 0}

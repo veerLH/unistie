@@ -34,7 +34,8 @@ Route::name('admin.')
 
         Route::resource('academic-cates','AcademicCateController');
 
-
+        //Depart Cate Route
+        Route::resource('dept-cates','DeptCateController');
 
 
     });
