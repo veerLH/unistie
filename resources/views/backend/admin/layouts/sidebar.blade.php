@@ -64,6 +64,13 @@
                         Categories
                     </a>
                 </li>
+                <li class="app-sidebar__heading">Teacher Management</li>
+                <li>
+                    <a href="#" class="sidebar-item">
+                        <i class="metismenu-icon pe-7s-menu"></i>
+                        Teacher
+                    </a>
+                </li>
                 <li class="app-sidebar__heading">User Management</li>
                 <li>
                     <a href="{{route('admin.client-users.index')}}" class="sidebar-item">
