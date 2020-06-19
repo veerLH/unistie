@@ -73,7 +73,7 @@ class AcademicCateController extends Controller
         $request['slug'] = $slug;
         AcCategory::create($request->all());
 
-        return redirect()->route('admin.academic_cates.index')->with('success', 'New academic_cate Successfully Created.');
+        return redirect()->route('admin.academic-cates.index')->with('success', 'New academic_cate Successfully Created.');
     }
 
     /**
