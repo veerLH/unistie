@@ -1,4 +1,4 @@
-<div class="app-sidebar sidebar-shadow bg-asteroid sidebar-text-light">
+<div class="app-sidebar sidebar-shadow bg-premium-dark sidebar-text-light">
     <div class="app-header__logo">
         <div class="logo-src"></div>
         <div class="header__pane ml-auto">
@@ -39,11 +39,36 @@
                         Home
                     </a>
                 </li>
-                <li class="app-sidebar__heading">Products & Categories</li>
-                <li>
+                <li class="app-sidebar__heading">Categories</li>
+                {{-- <li>
                     <a href="{{route('admin.categories.index')}}" class="sidebar-item">
                         <i class="metismenu-icon pe-7s-menu"></i>
+                         Categories
+                    </a>
+                </li> --}}
+                <li>
+                    <a href="{{route('admin.academic-cates.index')}}" class="sidebar-item">
+                        <i class="metismenu-icon pe-7s-menu"></i>
+                        Academic Categories
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('admin.dept-cates.index')}}" class="sidebar-item">
+                        <i class="metismenu-icon pe-7s-menu"></i>
+                        Department Categories
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar-item">
+                        <i class="metismenu-icon pe-7s-menu"></i>
                         Categories
+                    </a>
+                </li>
+                <li class="app-sidebar__heading">Teacher Management</li>
+                <li>
+                    <a href="#" class="sidebar-item">
+                        <i class="metismenu-icon pe-7s-menu"></i>
+                        Teacher
                     </a>
                 </li>
                 <li class="app-sidebar__heading">User Management</li>

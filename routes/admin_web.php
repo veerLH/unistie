@@ -29,6 +29,15 @@ Route::name('admin.')
         Route::put('/categories/{category}/restore', 'CategoriesController@restore')->name('categories.restore');
 
         Route::get('/', 'IndexController@index')->name('index');
+
+        //AcademicCate Route
+
+        Route::resource('academic-cates','AcademicCateController');
+
+        //Depart Cate Route
+        Route::resource('dept-cates','DeptCateController');
+
+
     });
 
 });
